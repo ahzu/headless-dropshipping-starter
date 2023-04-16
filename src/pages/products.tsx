@@ -9,12 +9,12 @@ import { PrintfulProduct } from "../types";
 import ProductGrid from "../components/ProductGrid";
 import Banner from "../components/banner";
 
-type IndexPageProps = {
+type ProductsPageProps = {
   products: PrintfulProduct[];
 };
 
 
-const IndexPage: React.FC<IndexPageProps> = ({ products }) => (
+const ProductsPage: React.FC<ProductsPageProps> = ({ products }) => (
   <>
  <Banner />
     <div className="text-center pb-6 md:pb-12">
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
   );
 
   const sortedProducts = orderBy(products, "price", "asc");
-  const limitedProducts = slice(sortedProducts, 0, 12);
+  const limitedProducts = slice(sortedProducts, 0, 9);
 
   return {
     props: {
@@ -54,4 +54,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default IndexPage;
+export default ProductsPage;

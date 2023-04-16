@@ -1,4 +1,5 @@
 import type { NextApiRequest } from "next";
+import { ReactNode } from "react";
 
 declare global {
   interface Window {
@@ -91,6 +92,8 @@ export interface ISyncProduct {
 }
 
 export interface PrintfulProduct {
+  variants: any;
+  description: ReactNode;
   id: string;
   name: string;
 }

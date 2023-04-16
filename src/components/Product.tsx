@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import useWishlistDispatch from "../hooks/useWishlistDispatch";
 import useWishlistState from "../hooks/useWishlistState";
@@ -36,7 +37,7 @@ const Product = (product) => {
   const onWishlist = isSaved(id);
 
   return (
-    <article className="border border-gray-200 rounded bg-white flex flex-col relative">
+    <article className="border border-gray-200 rounded bg-white flex flex-col relative hover:shadow-lg">
       <button
         aria-label="Add to wishlist"
         className="appearance-none absolute top-0 right-0 mt-3 mr-3 text-gray-300 focus:text-gray-500 hover:text-red-500 transition focus:outline-none"

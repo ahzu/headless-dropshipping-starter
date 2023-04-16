@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
 import { printful } from "../../../lib/printful-client";
 
 type Data = {
@@ -16,7 +15,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data | Error>
 ) {
-  const { id } = req.query;
+  const id = req.query.id as string;
+
 
   try {
     const { result } = await printful.get(`store/variants/@${id}`);
